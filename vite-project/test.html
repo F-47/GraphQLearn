@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const string = "hello";
+
+    const vowels = ["a", "e", "i", "o", "u"];
+    const removeVowels = (str) => {
+      return str.replace(/[aeiou]/gi, "");
+    };
+    console.log(removeVowels(string));
+
+    let count1 = 0;
+    const countVowels = (str) => {
+      return str.match(/[aeiou]/gi).length;
+    };
+    console.log(countVowels(string));
+
+    let count2 = 0;
+    const containsAllVowels = (str) => {
+      const length = str.length;
+      str.split("").map((letter) => {
+        return vowels.includes(letter) && count2++;
+      });
+      return count2 == length;
+    };
+    console.log(containsAllVowels(string));
+
+    const reverseVowels = (str) => {
+      let vowels = str.match(/[aeiou]/gi);
+      return str.replace(/[aeiou]/gi, () => vowels.pop());
+    };
+    console.log(reverseVowels(string));
+  </script>
+</html>
